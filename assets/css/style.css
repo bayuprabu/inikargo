@@ -15354,7 +15354,7 @@ header.stickycls {
       right: -0;
       height: 100%;
       display: block;
-      background: url("../images/vendor/step-arrow.png") no-repeat center center; }
+      background: url("/assets/images/vendor/step-arrow.png") no-repeat center center; }
     .become-vendor .step-bg .row {
       margin-left: -50px;
       margin-right: -50px; }

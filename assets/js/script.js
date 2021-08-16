@@ -206,7 +206,24 @@
     /*=====================
      10. footer according
      ==========================*/
+    // var contentwidth = jQuery(window).width();
+    // if ((contentwidth) < '750') {
+    //     jQuery('.footer-title h4').append('<span class="according-menu"></span>');
+    //     jQuery('.footer-title').on('click', function () {
+    //         jQuery('.footer-title').removeClass('active');
+    //         jQuery('.footer-contant').slideUp('normal');
+    //         if (jQuery(this).next().is(':hidden') == true) {
+    //             jQuery(this).addClass('active');
+    //             jQuery(this).next().slideDown('normal');
+    //         }
+    //     });
+    //     jQuery('.footer-contant').hide();
+    // } else {
+    //     jQuery('.footer-contant').show();
+    // }
+
     var contentwidth = jQuery(window).width();
+    console.log(contentwidth);
     if ((contentwidth) < '750') {
         jQuery('.footer-title h4').append('<span class="according-menu"></span>');
         jQuery('.footer-title').on('click', function () {
@@ -218,7 +235,7 @@
             }
         });
         jQuery('.footer-contant').hide();
-    } else {
+    } else{
         jQuery('.footer-contant').show();
     }
 

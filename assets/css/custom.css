@@ -2,6 +2,7 @@
     --theme-default: #7D7D7D;
     --secondary-color: #828282;
     --link-color:#222222;
+    --success-color:#81ba00;
 }
 
 textarea,
@@ -9,6 +10,28 @@ input,
 .btn {
     font-family: inherit;
     border-radius: 8px !important;
+}
+
+.input-group input:nth-child(1){
+    border-bottom-right-radius: 0 !important;
+    border-top-right-radius: 0 !important;
+}
+
+.input-group input:nth-child(2),
+.input-group input:nth-child(3){
+    border-radius: 0 !important;
+}
+
+.input-group span.input-group-text{
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+    font-weight: 500;
+    font-size: 18px;
+    color: var(--link-color);
+}
+
+label.input-group-text{
+    border-radius: 8px;
 }
 
 /* ---------- Header ---------- */
@@ -47,12 +70,12 @@ input,
     margin-top: 8px;
 }
 
-/* Form Input Harga Kargo */
+/* ==================== FORM INPUT SEARCH KARGO ==================== */
 .search-section .tab-title{
     background-color: var(--theme-default);
     margin-bottom: 10px;
     display: grid;
-    grid-template-columns: auto auto;
+    grid-template-columns: repeat(2, 1fr);
 }
 .search-section .tab-title li{
     font-weight: 600;
@@ -80,14 +103,6 @@ input,
     color: var(--secondary-color);
 }
 
-.search-section .tab-content span{
-    position: absolute;
-    right: -3px;
-    top: 15px;
-    font-weight: bolder;
-    color: var(--theme-default);
-}
-
 .search-section .tab-content .search-col {
     display: flex;
     align-items: flex-end;
@@ -97,6 +112,32 @@ input,
 .search-section .tab-content .search-btn{
     padding: 12px 12px;
 }
+
+.search-section .tab-content .address{
+    position: relative;
+}
+
+.search-section .tab-content .address a{
+    position: absolute;
+    right: 20px;
+    top: 40px;
+}
+
+.search-section .tab-content .address a i{
+    font-size: 20px;
+    color: var(--secondary-color);
+}
+
+.search-section .tab-content label.input-group-text{
+    font-weight: 600;
+}
+
+.search-section .tab-content label.input-group-text span{
+    margin-left: 4px;
+    font-weight: 700;
+    color: var(--success-color);
+}
+
 
 /* ---------- Footer ---------- */
 .sticky-footer .footer-logo span {
@@ -209,6 +250,22 @@ input,
     .header-tools .menu-right .icon-nav.top-bar{
         position: fixed;
         right: 20px;
+    }
+
+    .header-tools .menu-right .icon-nav.top-bar .top-icon-message{
+        position: relative;
+    }
+
+    .header-tools .menu-right .icon-nav.top-bar .top-icon-message:after,
+    .header-tools .menu-right .icon-nav.top-bar .top-icon-notif:after {
+        content: '';
+        width: 8px;
+        height: 8px;
+        position: absolute;
+        top:0;
+        right: 0;
+        clip-path: circle(50%);
+        background-color: var(--theme-deafult);
     }
 
     .header-tools .icon-nav.top-bar ul{
