@@ -153,6 +153,16 @@ option{
     color: var(--success-color);
 }
 
+.search-section .tab-content .total-volume-wrapper{
+    display: flex;
+    align-items: flex-end;
+}
+
+.search-section .tab-content .total-volume-wrapper .input-group-text{
+    height: 46px;
+    margin-bottom: 0 !important;
+}
+
 
 /* ---------- Footer ---------- */
 .sticky-footer .footer-logo span {
