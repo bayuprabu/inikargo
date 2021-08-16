@@ -254,20 +254,35 @@
                                                 </div>
                                                 <div class="row mt-3">
                                                     <div class="col-md-6 col-12">
-                                                        <div class="input-group d-none">
-                                                            <label for="" class="input-group-text">Total Volume =<span> 1000 cm<sup>3</sup></span></label>
+                                                            <label for="">Berat Muatan 
+                                                                <span tabindex="0" role="button" data-bs-placement="top" data-bs-toggle="popover" data-bs-trigger="focus" title="Keterangan Berat Muatan" data-bs-content="berat muatan dapat digunakan jika barang yang ingin dikirim tidak dapat diukur dengan satuan centimeter (cm)">
+                                                                    <i class="fa fa-info-circle"></i>
+                                                                </span>
+                                                            </label>
+                                                            <div class="row">
+                                                                <div class="input-group">
+                                                                    <input type="number" class="form-control" placeholder="Berat barang">
+                                                                    <span class="input-group-text">kg</span>
+                                                                </div>
+                                                            </div>
                                                         </div>
-                                                    </div>
+                                                        <div class="col-md-6 col-12">
+                                                            <div class="input-group d-none">
+                                                                <label for="" class="input-group-text">Total Volume =<span> 1000 cm<sup>3</sup></span></label>
+                                                            </div>
+                                                        </div>
                                                 </div>
                                             </div>
                                             <div class="col-md-6 col-12">
                                                 <div class="row">
                                                     <div class="col-md-6 col-12">
-                                                        <label for="">Berat Muatan <span tabindex="0" role="button" data-bs-placement="top" data-bs-toggle="popover" data-bs-trigger="focus" title="Keterangan Berat Muatan" data-bs-content="berat muatan dapat digunakan jika barang yang ingin dikirim tidak dapat diukur dengan satuan centimeter (cm)"><i class="fa fa-info-circle"></i></span></label>
-                                                        <div class="input-group">
-                                                            <input type="number" class="form-control" placeholder="">
-                                                            <span class="input-group-text">kg</span>
-                                                        </div>
+                                                        <label for="">Pilih Layanan Kargo</label>
+                                                        <select class="form-select form-select-lg">
+                                                            <option value="1">Port to Port</option>
+                                                            <option value="2">Port to Door</option>
+                                                            <option value="3">Door to Port</option>
+                                                            <option value="3">Door to Door</option>
+                                                        </select>
                                                     </div>
                                                     <div class="col-md-6 col-12 search-col">
                                                         <button class="btn search-btn btn-solid">
@@ -571,9 +586,10 @@
 
     <script>
         var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'))
-var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
-  return new bootstrap.Popover(popoverTriggerEl)
-})
+            var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
+            return new bootstrap.Popover(popoverTriggerEl)
+        })
+
         new WOW().init();
         feather.replace();
         $(window).on('load', function () {

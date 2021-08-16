@@ -1,15 +1,23 @@
 :root{
     --theme-default: #7D7D7D;
     --secondary-color: #828282;
+    --light-grey:#bbbbbb;
     --link-color:#222222;
     --success-color:#81ba00;
 }
 
 textarea,
 input,
+.form-select,
 .btn {
     font-family: inherit;
     border-radius: 8px !important;
+}
+
+::placeholder{
+    color: var(--light-grey) !important;
+    font-weight: 500;
+    font-size: 16px;
 }
 
 .input-group input:nth-child(1){
@@ -32,6 +40,13 @@ input,
 
 label.input-group-text{
     border-radius: 8px;
+}
+
+.form-select,
+option{
+    font-weight: 600;
+    font-size: 16px;
+    color: var(--theme-deafult);
 }
 
 /* ---------- Header ---------- */
