@@ -49,6 +49,11 @@ option{
     color: var(--theme-deafult);
 }
 
+.input-group>.form-control:focus,
+.input-group>.form-select:focus{
+    z-index:0 !important
+}
+
 /* ---------- Header ---------- */
 .header-tools .brand-logo a,
 .sticky-footer .footer-logo{
@@ -163,7 +168,6 @@ option{
     margin-bottom: 0 !important;
 }
 
-
 /* ---------- Footer ---------- */
 .sticky-footer .footer-logo span {
     font-weight: 700;
@@ -230,6 +234,7 @@ option{
         margin-bottom: 0;
         color: var(--secondary-color);
     }
+
 }
 
 @media (max-width: 1020px) {

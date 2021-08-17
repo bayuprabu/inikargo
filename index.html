@@ -245,14 +245,19 @@
                                             <div class="col-md-6 col-12">
                                                 <div class="row">
                                                     <label>Volume Barang <span tabindex="0" role="button" data-bs-placement="top" data-bs-toggle="popover" data-bs-trigger="focus" title="Keterangan Volume Barang" data-bs-content="Jika berat (kg) dari volume barang lebih besar dari berat muatan yang dihitung dari panjang x lebar x tinggi / 6000 maka yang diambil berat dari volume barang"><i class="fa fa-info-circle"></i></span></label>
-                                                    <div class="input-group">
-                                                        <input type="number" class="form-control" placeholder="panjang">
-                                                        <input type="number" class="form-control" placeholder="lebar">
-                                                        <input type="number" class="form-control" placeholder="tinggi">
+                                                    <div id="air-calculate-volume" class="input-group">
+                                                        <input id="air-long-volume" type="number" class="form-control" placeholder="panjang">
+                                                        <input id="air-width-volume" type="number" class="form-control" placeholder="lebar">
+                                                        <input id="air-tall-volume" type="number" class="form-control" placeholder="tinggi">
                                                         <span class="input-group-text">cm</span>
                                                     </div>
                                                 </div>
-                                                <div class="row mt-3">
+                                                <div class="row">
+                                                    <div class="total-volume-wrapper col-md-6 col-12 my-3">
+                                                        <div class="input-group">
+                                                            <label for="" class="input-group-text">Total Volume = <span id="total-air-volume"></span> <span>cm<sup>3</sup></span></label>
+                                                        </div>
+                                                    </div>
                                                     <div class="col-md-6 col-12">
                                                         <label for="">Berat Muatan 
                                                             <span tabindex="0" role="button" data-bs-placement="top" data-bs-toggle="popover" data-bs-trigger="focus" title="Keterangan Berat Muatan" data-bs-content="berat muatan dapat digunakan jika barang yang ingin dikirim tidak dapat diukur dengan satuan centimeter (cm)">
@@ -260,13 +265,8 @@
                                                             </span>
                                                         </label>
                                                         <div class="input-group">
-                                                            <input type="number" class="form-control" placeholder="Berat barang">
+                                                            <input id="air-weight" type="number" class="form-control" placeholder="Berat barang">
                                                             <span class="input-group-text">kg</span>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-md-6 col-12 total-volume-wrapper d-none">
-                                                        <div class="input-group">
-                                                            <label for="" class="input-group-text">Total Volume =<span> 1000 cm<sup>3</sup></span></label>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -586,6 +586,22 @@
             var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
             return new bootstrap.Popover(popoverTriggerEl)
         })
+
+        const airCalculateVolume = document.getElementById('air-calculate-volume');
+        let totalAirVolume = document.getElementById('total-air-volume'),
+            airWeight = document.getElementById('air-weight');
+        airCalculateVolume.addEventListener('keyup', ()=>{
+            let airLongVolume = document.getElementById('air-long-volume').value;
+                airWidthVolume = document.getElementById('air-width-volume').value,
+                airTallVolume = document.getElementById('air-tall-volume').value;
+                volumeResult = Number(airLongVolume) * Number(airWidthVolume) * Number(airTallVolume)
+                totalAirVolume.innerText = volumeResult ;
+                weightResult = volumeResult / 6000;
+                airWeight.value = parseFloat(weightResult).toFixed(2); 
+                
+        })
+
+
 
         new WOW().init();
         feather.replace();
